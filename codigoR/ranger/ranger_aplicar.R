@@ -4,13 +4,13 @@
 rm( list=ls() )
 gc()
 
-# source( "d:\\universidades\\itba\\a2018\\codigoR\\ranger\\ranger_aplicar.R" )
+# source( "~/cloud/cloud1/codigoR/ranger/ranger_aplicar.R" )
 
 library( ranger )
 library(randomForest)  #solo se usa para imputar nulos
 
 # Establezco la carpeta de trabajo
-setwd( "d:\\universidades\\itba\\a2018\\")
+# setwd( "~/cloud/cloud1/work/ranger/")
 
 # Parámetros del dataset de entrada
 karchivo_entrada       <- "adult_extendido.txt"
@@ -39,7 +39,6 @@ dataset <- dataset[ , !(names(dataset) %in%   kcampos_a_borrar  )    ]
 
 # Imputo los nulos, ya que ranger no acepta nulos
 dataset <-  na.roughfix( dataset )
-
 
 # Estos valores son los que generaron el mejor lift, en la búsqueda de los hiperparámetros mediante gridsearch.
 vsplitrule      <-   "gini"
